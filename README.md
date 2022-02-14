@@ -17,3 +17,7 @@ This repo contains the server for the app
 -   <a href="https://github.com/jacqouese/Linguesia">React Native App</a>
 -   Laravel with SQL backend for storing flashcards (progress stored locally on user device)
 -   SQLite and AsyncStorage for local storage
+
+## DB structure
+
+<img src="https://drive.google.com/uc?export=view&id=1npKLONUu2TRwmg_9uS0FTXn5yM88v6y9" alt="img">

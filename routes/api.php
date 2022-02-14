@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LevelController;
 use App\Http\Controllers\FlashcardController;
+use App\Http\Controllers\CategoryController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -22,3 +23,5 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::get('/levels', [LevelController::class, 'index']);
 
 Route::get('/flashcards', [FlashcardController::class, 'index']);
+
+Route::get('/category', [CategoryController::class, 'index']);
