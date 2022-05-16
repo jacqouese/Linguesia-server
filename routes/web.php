@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ImageController;
+use App\Http\Controllers\webLevelController;
+use App\Http\Controllers\webFlashcardController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,7 +17,23 @@ use App\Http\Controllers\ImageController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('index');
 });
+
+Route::get('/panel/levels', [webLevelController::class, 'index']);
+
+Route::get('/panel/levels/edit/{id}', function () {
+    return view('editlevel');
+});
+
+Route::get('/panel/levels/{id}', [webLevelController::class, 'indexSingle']);
+
+Route::get('/panel/levels/{id}/add', [webFlashcardController::class, 'addNewFlashcard']);
+
+Route::get('/panel/levels/{id}/edit/{flashcardId}', function () {
+    return view('editflashcard');
+});
+
+Route::post('/flashcard', [webFlashcardController::class, 'store']);
 
 Route::get('image/{filename}', [ImageController::class, 'index']);
