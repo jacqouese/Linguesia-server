@@ -13,26 +13,22 @@
         <div class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center py-4 sm:pt-0">
             <header class="position-fixed top-0 w-100 d-flex justify-content-center">
                 <nav class="container-sm navbar navbar-expand-lg navbar-light">
-                    <a class="navbar-brand" href="#">Linguesia</a>
+                    <a class="navbar-brand" href="/panel/levels">Linguesia</a>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
-                    <div class="collapse navbar-collapse" id="navbarNav">
-                        <ul class="navbar-nav">
-                        <li class="nav-item active">
-                            <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/panel/levels">Levels</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/panel/flashcards">Flashcards</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Logout</a>
-                        </li>
-                        </ul>
-                    </div>
+                    @if(Auth::check())
+                        <div class="collapse navbar-collapse" id="navbarNav">
+                            <ul class="navbar-nav">
+                            <li class="nav-item">
+                                <form method="POST" action="{{ route('logout') }}">
+                                    @csrf
+                                    <button type="submit" class="nav-link btn">Logout</button>
+                                </form>
+                            </li>
+                            </ul>
+                        </div>
+                    @endif
                 </nav>
             </header>
             <main class="pt-5">
