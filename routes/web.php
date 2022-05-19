@@ -30,10 +30,9 @@ Route::get('/panel/levels/{id}', [webLevelController::class, 'indexSingle']);
 
 Route::get('/panel/levels/{id}/add', [webFlashcardController::class, 'addNewFlashcard']);
 
-Route::get('/panel/levels/{id}/edit/{flashcardId}', function () {
-    return view('editflashcard');
-});
+Route::get('/panel/levels/{id}/edit/{flashcardId}', [webFlashcardController::class, 'edit']);
 
 Route::post('/flashcard', [webFlashcardController::class, 'store']);
+Route::put('/flashcard', [webFlashcardController::class, 'update']);
 
 Route::get('image/{filename}', [ImageController::class, 'index']);

@@ -3,14 +3,7 @@
 @section('content')
 <div class="panel-container levels-container container-sm">
 <h2>Actions</h2>
-<div class="w-100 d-flex justify-content-center gap-2">
-    <div class="card w-40"  style="width: 18rem;">
-        <div class="card-body">
-            <h5 class="card-title">Quick add from txt</h5>
-            <p class="card-text">Add multiple flashcards from txt file</p>
-            <a href="#" class="btn btn-primary">Add</a>
-        </div>
-    </div>
+<div class="w-100 d-flex gap-2">
     <div class="card w-40"  style="width: 18rem;">
         <div class="card-body">
             <h5 class="card-title">Add manually</h5>
@@ -20,9 +13,9 @@
     </div>
     <div class="card w-40"  style="width: 18rem;">
         <div class="card-body">
-            <h5 class="card-title">Quick add from txt</h5>
+            <h5 class="card-title">Add from txt (coming soon)</h5>
             <p class="card-text">Add multiple flashcards from txt file</p>
-            <a href="#" class="btn btn-primary">Add</a>
+            <a href="#" class="btn btn-primary disabled">Add</a>
         </div>
     </div>
 </div>

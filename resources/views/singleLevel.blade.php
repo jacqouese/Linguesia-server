@@ -32,9 +32,9 @@
         </div>
         <div class="card w-40"  style="width: 18rem;">
             <div class="card-body">
-                <h5 class="card-title">Quick add from txt</h5>
-                <p class="card-text">Add multiple flashcards from txt file</p>
-                <a href="#" class="btn btn-primary">Add</a>
+                <h5 class="card-title">Add from txt (coming soon)</h5>
+                <p class="card-text">Add multiple flashcards from a txt file</p>
+                <a href="#" class="btn btn-primary disabled">Add</a>
             </div>
         </div>
     </div>
@@ -61,7 +61,7 @@
             <td>{{ $flashcard->german }}</td>
             <td>{{ $flashcard->polish }}</td>
             <td>
-                <button type="button" class="btn btn btn-outline-primary">Edit</button>
+              <a href="/panel/levels/{{ $level->id }}/edit/{{ $flashcard->id }}" class="btn btn-outline-primary">Edit</a>
             </td>
           </tr>
           @endforeach

@@ -20,4 +20,6 @@ class webLevelController extends Controller
             'flashcards' => Flashcard::where('flashcard_levels_id', $id)->get()
         ]);
     }
+
+    
 }
