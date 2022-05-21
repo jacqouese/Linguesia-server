@@ -9,4 +9,5 @@ class Level extends Model
 {
     // use HasFactory;
     protected $table = 'flashcard_levels';
+    protected $fillable = ['title_polish', 'subtitle_polish', 'title_english', 'subtitle_english', 'is_verb', 'image'];
 }

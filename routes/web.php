@@ -19,17 +19,18 @@ use App\Http\Controllers\LoginController;
 
 Route::group(['middleware' => 'auth'], function() {
     Route::get('/panel/levels', [webLevelController::class, 'index']);
-
-    Route::get('/panel/levels/edit/{id}', function () {
-        return view('editlevel');
-    });
+    Route::get('/panel/levels/add', [webLevelController::class, 'create']);
+    Route::get('/panel/levels/edit/{id}', [webLevelController::class, 'edit']);
+    Route::get('/panel/levels/{id}', [webLevelController::class, 'show']);
     
-    Route::get('/panel/levels/{id}', [webLevelController::class, 'indexSingle']);
-    Route::get('/panel/levels/{id}/add', [webFlashcardController::class, 'addNewFlashcard']);
+    Route::get('/panel/levels/{id}/add', [webFlashcardController::class, 'create']);
     Route::get('/panel/levels/{id}/edit/{flashcardId}', [webFlashcardController::class, 'edit']);
     
     Route::post('/flashcard', [webFlashcardController::class, 'store']);
     Route::put('/flashcard', [webFlashcardController::class, 'update']);
+
+    Route::post('/level', [webLevelController::class, 'store']);
+    Route::put('/level', [webLevelController::class, 'update']);
 });
 
 Route::get('/', [LoginController::class, 'index'])->name('login');

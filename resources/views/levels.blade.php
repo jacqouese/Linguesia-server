@@ -8,7 +8,7 @@
         <div class="card-body">
             <h5 class="card-title">Add manually</h5>
             <p class="card-text">Add flashcards manually on the website</p>
-            <a href="" class="btn btn-primary">Add</a>
+            <a href="/panel/levels/add" class="btn btn-primary">Add</a>
         </div>
     </div>
     <div class="card w-40"  style="width: 18rem;">
@@ -33,7 +33,13 @@
                 <p class="card-text">{{ $level->subtitle_polish }}</p>
                 </div>
                 <ul class="list-group list-group-flush">
-                <li class="list-group-item"><span class="badge bg-secondary">Flashcards</span> <span class="badge bg-secondary">Articles</span></li>
+                <li class="list-group-item">
+                    @if ($level->is_verb == 0)
+                        <span class="badge bg-secondary">Flashcards</span> <span class="badge bg-secondary">Articles</span>
+                    @else
+                        <span class="badge bg-secondary">Irregular</span>
+                    @endif
+                </li>
                 </ul>
                 <div class="card-body">
                     <a href="/panel/levels/{{ $level->id }}" class="btn btn-primary">See more</a>

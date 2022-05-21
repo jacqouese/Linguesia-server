@@ -8,7 +8,7 @@ use App\Models\Flashcard;
 
 class webFlashcardController extends Controller
 {
-    public function addNewFlashcard($id) {
+    public function create($id) {
         $level = Level::findOrFail($id);
 
         if ($level->is_verb === 0) {
@@ -28,9 +28,9 @@ class webFlashcardController extends Controller
         }
     }
 
-    public function edit($id, $levelId) {
+    public function edit($id, $flashcardId) {
         $level = Level::findOrFail($id);
-        $flashcard = Flashcard::findOrFail($levelId);
+        $flashcard = Flashcard::findOrFail($flashcardId);
         
         if ($level->is_verb === 0) {
             return view('editFlashcardNoun', [
